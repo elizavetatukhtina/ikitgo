@@ -8,14 +8,18 @@ using UnityEngine.UI;
 public class GameControll : MonoBehaviour {
 
 	public static GameControll instance;
-	public GameObject gameOverText;	
-	public Text timeAndRe;
+	//public GameObject gameOverText;	
+	//public Text timeAndRe;
 	public bool gameOver;
 	float timer;
+
+	public GameObject button; //кнопка Replay
 
 
 	void Start()
 	{
+		button = GameObject.FindWithTag ("retryBtn");
+		button.gameObject.SetActive (false);
 		gameOver = false;
 		timer = 3;	
 	}
@@ -34,24 +38,15 @@ public class GameControll : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if( gameOver == true && Input.touchCount > 0 )
+		if( gameOver == true)
 		{
-			if( timer <= 3 && timer >= 0)
-			{
-				timer -= Time.deltaTime;
-				timeAndRe.text = (Mathf.CeilToInt(timer)).ToString();
-
-			}
-			else
-			{
-				LevelManager.instance.LoadGame();
-			}
+			button.gameObject.SetActive (true);
 		}		
 	}
 
 	public void CharacterDied()
 	{
-		gameOverText.SetActive(true);
+		//gameOverText.SetActive(true);
 		gameOver = true;
 	}
 
