@@ -12,7 +12,7 @@ public class Character : MonoBehaviour{
 	Rigidbody2D	rbCharacter;
 	bool	isCharacterUp ;
 	bool	touchJump;
-	bool	isDead;
+	public bool	isDead;
 	float distanceOfJump;
 	float heightOfJump;
 	float step;
@@ -83,6 +83,7 @@ public class Character : MonoBehaviour{
 		{
 			isDead = true;
 			GameControll.instance.CharacterDied();
+			print ("DEAD");
 		}
 	}
 	

@@ -18,8 +18,7 @@ public class GameControll : MonoBehaviour {
 
 	void Start()
 	{
-		button = GameObject.FindWithTag ("retryBtn");
-		button.gameObject.SetActive (false);
+		
 		gameOver = false;
 		timer = 3;	
 	}
@@ -38,9 +37,10 @@ public class GameControll : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		
 		if( gameOver == true)
 		{
-			button.gameObject.SetActive (true);
+			Application.LoadLevel ("gameover");
 		}		
 	}
 
