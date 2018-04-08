@@ -40,26 +40,31 @@ public class Character : MonoBehaviour{
 		{
 			foreach(Touch touch in Input.touches)
 			{
-				if( Center_Screen_Y/2 > touch.position.y	&&	Center_Screen_X/2 < touch.position.x && isCharacterUp) //move forvard
+				if( Center_Screen_Y/2 > touch.position.y	&&	Center_Screen_X/2 < touch.position.x && isCharacterUp  && transform.position.x <= 8.32f) //move forvard
 				{
 
 					transform.position = Vector2.MoveTowards( (Vector2)transform.position, new Vector2( touch.position.x, 0), step );
 
 				}
-				else if( Center_Screen_Y/2 > touch.position.y &&  Center_Screen_X/2 > touch.position.x && isCharacterUp) //move back
+				else if( Center_Screen_Y/2 > touch.position.y &&  Center_Screen_X/2 > touch.position.x && isCharacterUp && transform.position.x >= -8.26f) //move back
 				{
 
-					transform.position = Vector2.MoveTowards( (Vector2)transform.position, new Vector2( -touch.position.y, 0), step );
+					transform.position = Vector2.MoveTowards( (Vector2)transform.position, new Vector2( -touch.position.x, 0), step );
 
 				}
-				else if( Center_Screen_Y/2 < touch.position.y	 &&	 isCharacterUp) //jump
+				else if(touch.position.y > Center_Screen_Y/1.3f  && isCharacterUp) //jump
 				{	
-					
-					rbCharacter.AddForce( Vector2.up * 2F, ForceMode2D.Impulse );
+					rbCharacter.AddForce (new Vector2 (0, 3.5f), ForceMode2D.Impulse);
+
+					//rbCharacter.AddForce( Vector2.up * 2F, ForceMode2D.Impulse );
 					//rbCharacter.AddForce( Vector2.up * 5F, ForceMode2D.Impulse);
-				}			
+				}		
+
 			}	
+
+
 		}
+	
 
 
 	
@@ -83,7 +88,6 @@ public class Character : MonoBehaviour{
 		{
 			isDead = true;
 			GameControll.instance.CharacterDied();
-			print ("DEAD");
 		}
 	}
 	

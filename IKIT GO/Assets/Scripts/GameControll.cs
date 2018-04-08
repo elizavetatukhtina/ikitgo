@@ -8,10 +8,8 @@ using UnityEngine.UI;
 public class GameControll : MonoBehaviour {
 
 	public static GameControll instance;
-	//public GameObject gameOverText;	
-	//public Text timeAndRe;
 	public bool gameOver;
-	float timer;
+
 
 	public GameObject button; //кнопка Replay
 
@@ -20,7 +18,7 @@ public class GameControll : MonoBehaviour {
 	{
 		
 		gameOver = false;
-		timer = 3;	
+
 	}
 
 	// непанятная хуня(функция) которая позволяет вызывать GameControll в другом классe. не трогать если не хочешь получить пистов от самого себя в будущем
@@ -46,13 +44,9 @@ public class GameControll : MonoBehaviour {
 
 	public void CharacterDied()
 	{
-		//gameOverText.SetActive(true);
 		gameOver = true;
 	}
 
 
-	IEnumerator Deploy()
-	{
-  	yield return new WaitForSeconds(1F);
-	}
+
 }
