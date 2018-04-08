@@ -32,7 +32,19 @@ public class Character : MonoBehaviour{
 		isDead = false;
 	}
 	
-	// Update is called once per frame
+	//логика прыжка в методе FixedUpdate
+
+	void FixedUpdate(){
+		
+		if (Input.touchCount > 0 && isDead == false) {
+			foreach (Touch touch in Input.touches) {
+				if (touch.position.y > Center_Screen_Y / 2 && isCharacterUp) { //jump
+					rbCharacter.AddForce (Vector2.up * 3F, ForceMode2D.Impulse);
+				}
+			}
+		}
+
+	}
 	void Update () {
 
 
@@ -52,13 +64,11 @@ public class Character : MonoBehaviour{
 					transform.position = Vector2.MoveTowards( (Vector2)transform.position, new Vector2( -touch.position.x, 0), step );
 
 				}
-				else if(touch.position.y > Center_Screen_Y/1.3f  && isCharacterUp) //jump
+				/*else if(touch.position.y > Center_Screen_Y/2  && isCharacterUp) //jump
 				{	
-					rbCharacter.AddForce (new Vector2 (0, 3.5f), ForceMode2D.Impulse);
-
-					//rbCharacter.AddForce( Vector2.up * 2F, ForceMode2D.Impulse );
+					rbCharacter.AddForce( Vector2.up * 8F, ForceMode2D.Impulse );
 					//rbCharacter.AddForce( Vector2.up * 5F, ForceMode2D.Impulse);
-				}		
+				}	*/	
 
 			}	
 

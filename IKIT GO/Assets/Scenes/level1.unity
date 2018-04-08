@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0561fd922214d45a492b766bfb7bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!212 &323421739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52887b3b10cd0342a86043dddbd47fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!1 &1058624363
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52887b3b10cd0342a86043dddbd47fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!1 &1329807476
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52887b3b10cd0342a86043dddbd47fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!1 &1446634094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52887b3b10cd0342a86043dddbd47fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!212 &1464694679
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1093,7 +1093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52887b3b10cd0342a86043dddbd47fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!212 &1653967965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52887b3b10cd0342a86043dddbd47fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!212 &1886227720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0561fd922214d45a492b766bfb7bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -2
+  speed: -3
 --- !u!212 &1941044431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1323,7 +1323,6 @@ GameObject:
   - component: {fileID: 2046052956}
   - component: {fileID: 2046052958}
   - component: {fileID: 2046052957}
-  - component: {fileID: 2046052959}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -1378,7 +1377,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046052953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.16, y: -2.68, z: 0}
+  m_LocalPosition: {x: -8.01, y: -2.55, z: 0}
   m_LocalScale: {x: 0.6003814, y: 0.42860523, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1403,7 +1402,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 4
 --- !u!60 &2046052957
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1517,17 +1516,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
---- !u!114 &2046052959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2046052953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d7632b619893d499a143705a5a5f5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2076238126
 GameObject:
   m_ObjectHideFlags: 0
