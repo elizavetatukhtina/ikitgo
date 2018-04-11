@@ -1,0 +1,4 @@
+LevelManager	LevelManager.cs	/^public class LevelManager : MonoBehaviour {$/;"	c
+instance	LevelManager.cs	/^	public static LevelManager instance;$/;"	f	class:LevelManager
+Awake	LevelManager.cs	/^	void Awake () {$/;"	m	class:LevelManager	file:
+LoadGame	LevelManager.cs	/^	public void LoadGame ()	{$/;"	m	class:LevelManager

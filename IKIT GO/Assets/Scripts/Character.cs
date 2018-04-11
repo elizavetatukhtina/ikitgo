@@ -17,6 +17,9 @@ public class Character : MonoBehaviour{
 	float heightOfJump;
 	float step;
 
+    GameObject[] background;
+    GameObject[] objects;
+    float speed;
 
 
 	// Use this for initialization
@@ -30,6 +33,10 @@ public class Character : MonoBehaviour{
 		step = 0.09F;
 		touchJump = false;
 		isDead = false;
+
+        background = GameObject.FindGameObjectsWithTag("Background");
+        objects = GameObject.FindGameObjectsWithTag("Object");
+        speed = -3;
 	}
 	
 	//логика прыжка в методе FixedUpdate
@@ -52,11 +59,11 @@ public class Character : MonoBehaviour{
 		{
 			foreach(Touch touch in Input.touches)
 			{
-				if( Center_Screen_Y/2 > touch.position.y	&&	Center_Screen_X/2 < touch.position.x && isCharacterUp  && transform.position.x <= 8.32f) //move forvard
+				if( Center_Screen_Y/2 > touch.position.y	&&	Center_Screen_X/2 < touch.position.x /*&& isCharacterUp*/  && transform.position.x <= 8.32f) //move forvard
 				{
 
 					transform.position = Vector2.MoveTowards( (Vector2)transform.position, new Vector2( touch.position.x, 0), step );
-
+                    Scroll();
 				}
 				else if( Center_Screen_Y/2 > touch.position.y &&  Center_Screen_X/2 > touch.position.x && isCharacterUp && transform.position.x >= -8.26f) //move back
 				{
@@ -94,7 +101,7 @@ public class Character : MonoBehaviour{
 	{		
 
 		isCharacterUp = true;	
-		if(c.gameObject.name == "ice")
+        if(c.gameObject.name == "ice" || c.gameObject.name == "nut(Clone)")
 		{
 			isDead = true;
 			GameControll.instance.CharacterDied();
@@ -102,5 +109,28 @@ public class Character : MonoBehaviour{
 	}
 	
 
+    void Scroll()
+    {
 
+        foreach (var pic in background)
+        {
+            pic.transform.Translate(speed * Time.deltaTime, 0f, 0f);
+
+            if (pic.transform.position.x <= -17.7)
+            {
+                pic.transform.Translate(35.4f, 0f, 0f);
+            }
+        }
+
+        foreach (var obj in objects)
+        {
+
+            obj.transform.Translate(speed * Time.deltaTime, 0f, 0f);
+
+            if (obj.transform.position.x <= -10f)
+            {
+                obj.transform.Translate(20f, 0f, 0f);
+            }
+        }
+    }
 }
